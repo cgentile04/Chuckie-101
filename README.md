@@ -1,5 +1,5 @@
-# Getting to Know Each Other
-This project provides code for Getting to Know Each Other and is based on 
+# Chuckie 101
+This project provides code for Chuckie 101 and is based on 
 [W3Schools HTML Tutorial](https://www.w3schools.com/html/).
 
 ## Author
