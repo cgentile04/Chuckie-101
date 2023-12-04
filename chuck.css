@@ -1,7 +1,7 @@
 body {
     background-color: gold;
     box-shadow: rgb(0, 236, 0) 0 0 90px 33px;
-    text-align: center
+    text-align: justify
 }
 h1 {
     color: rgb(0, 234, 195);
@@ -22,6 +22,14 @@ h3 {
     font-style: Bold;
     text-align: center
 }
+p {
+  font-size: 16pt;
+  margin-left: 6px;
+  margin-right: 6px
+}
+button {
+  text-align: center
+}
 img {
     max-width: 300px;
     border-radius: 50%;
@@ -32,7 +40,7 @@ img {
 /* Style the navigation bar */
 .navbar {
     width: 100%;
-    background-color: beige;
+    background-color: lightgreen;
     overflow: auto;
   }
   /* Navbar links */

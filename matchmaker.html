@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    Author: Chuckie Gentile
+    Project: Matchmaker For the Web
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chuck.css">
+    <link rel="stylesheet" href="matchmaker.css">
+    <title>Matchmaker</title>
+</head>
+
+<body>
+    <script>
+        function myFunction(element, clr) {
+        element.style.color = clr;
+        }
+    </script>
+    <h1 onclick="myFunction(this, 'royalblue')">
+        Chuckie 101
+    </h1>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<div class="navbar">
+	<a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+	<a href="aboutme.html"><i class="fa fa-fw fa-user"></i> About Me</a>
+	<a class="active" href="matchmaker.html".html><i class="fa fa-fw fa-user"></i> Matchmaker</a>
+	<a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+	</div>
+
+    <h2>Matchmaker</h2>
+    <p>Welcome to Chuckie's Matchmaker! The following five statements may or may not be designed to trick you...For each of the statements, select using the dropdown menu whether you Strongly Agree, Agree, Neither Agree nor Disagree, Disagree, or Strongly Disagree with them. Once you have finished selecting your responses, click the "Calculate Compatibility" button. After this, values from 1 through 5 will appear for each of the five questions (in order from top to bottom). These are scores that indicate how compatible you are with me according to each question. Along with this, a percentage indicating your overall compatibility with me (Chuckie Gentile) will display. Under it, there will be a comment based on how like-minded we are. Good luck, and I hope you enjoy!</p>
+
+    <label>Suits is one of the greatest TV shows of all time.</label><br />
+    <select id="q1">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neither Agree nor Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <br /><br /><br />
+
+    <label>Cherry twizzler pull-n-peels are the worst candy on the planet.</label><br />
+    <select id="q2">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neither Agree nor Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <br /><br /><br />
+
+    <label>Christmas is the worst holiday ever.</label><br />
+    <select id="q3">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neither Agree nor Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <br /><br /><br />
+
+    <label>Quality trumps quantity in regards to time.</label><br />
+    <select id="q4">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neither Agree nor Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <br /><br /><br />
+
+    <label>Texas Roadhouse rolls are delicious!</label><br />
+    <select id="q5">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neither Agree nor Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <br /><br /><br />
+
+    <button onclick="CalculateCompatibility()">Calculate Compatibility</button>
+
+    <p id="question-1-compatibility"></p>
+    <p id="question-2-compatibility"></p>
+    <p id="question-3-compatibility"></p>
+    <p id="question-4-compatibility"></p>
+    <p id="question-5-compatibility"></p>
+
+    <p id="compatibility"></p>
+
+    <p id="message"></p>
+    
+<script>
+console.log("Starting Matchmaker...")
+
+function CalculateCompatibility() {
+    console.log("CalculateCompatibility")
+
+    const MESSAGE_WONDERFUL = "We should totally go out sometime!"
+    const MESSAGE_GREAT = "We should be best friends."
+    const MESSAGE_GOOD = "We should just be friends."
+    const MESSAGE_BAD = "See ya."
+    const DESIRED_RESPONSE = [
+        5, /* Strongly Agree */
+        1, /* Strongly Disagree */
+        1,
+        5,
+        5,
+    ]
+
+    const MAX_SCORE = 25;
+
+    // Get the current values of the dropdown controls
+    let question1Response = document.getElementById("q1").selectedOptions[0].value;
+    let question2Response = document.getElementById("q2").selectedOptions[0].value;
+    let question3Response = document.getElementById("q3").selectedOptions[0].value;
+    let question4Response = document.getElementById("q4").selectedOptions[0].value;
+    let question5Response = document.getElementById("q5").selectedOptions[0].value;
+
+    // Log the values associated with questions 1 through 5 to the console.
+    console.log("Question 1 Answers:");
+    console.log(document.getElementById("q1").selectedOptions[0].text);
+    console.log(document.getElementById("q1").selectedOptions[0].value);
+    console.log(question1Response);
+
+    console.log("Question 2 Answers:");
+    console.log(document.getElementById("q2").selectedOptions[0].text);
+    console.log(document.getElementById("q2").selectedOptions[0].value);
+    console.log(question2Response);
+
+    console.log("Question 3 Answers:");
+    console.log(document.getElementById("q3").selectedOptions[0].text);
+    console.log(document.getElementById("q3").selectedOptions[0].value);
+    console.log(question3Response);
+
+    console.log("Question 4 Answers:");
+    console.log(document.getElementById("q4").selectedOptions[0].text);
+    console.log(document.getElementById("q4").selectedOptions[0].value);
+    console.log(question4Response);
+
+    console.log("Question 5 Answers:");
+    console.log(document.getElementById("q5").selectedOptions[0].text);
+    console.log(document.getElementById("q5").selectedOptions[0].value);
+    console.log(question5Response);
+
+    // Todo: Calculate Compatibility scores.
+    let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE [0]);
+    let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE [1]);
+    let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE [2]);
+    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE [3]);
+    let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE [4]);
+
+    console.log("c1="+question1Compatibility);
+    console.log("c2="+question2Compatibility);
+    console.log("c3="+question3Compatibility);
+    console.log("c4="+question4Compatibility);
+    console.log("c5="+question5Compatibility);
+
+    // Calculate total compatibility.
+    let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
+
+    // Convert totalCompatibility to a percentage.
+    totalCompatibility *= 100 / MAX_SCORE;
+    totalCompatibility = Math.round(totalCompatibility);
+    console.log("tc=" + totalCompatibility);
+
+    document.getElementById("question-1-compatibility").innerHTML = "Your question 1 compatibility score is: " + question1Compatibility;
+    document.getElementById("question-2-compatibility").innerHTML = "Your question 2 compatibility score is: " + question2Compatibility;
+    document.getElementById("question-3-compatibility").innerHTML = "Your question 3 compatibility score is: " + question3Compatibility;
+    document.getElementById("question-4-compatibility").innerHTML = "Your question 4 compatibility score is: " + question4Compatibility;
+    document.getElementById("question-5-compatibility").innerHTML = "Your question 5 compatibility score is: " + question5Compatibility;
+
+    document.getElementById("compatibility").innerHTML = "Your total compatibility is: " + totalCompatibility;
+
+    console.log("tc=" + totalCompatibility);
+    if (totalCompatibility >= 90) {
+        console.log("We should totally go out sometime!");
+        document.getElementById("message").innerHTML = MESSAGE_WONDERFUL
+    }else if (totalCompatibility >= 80) {
+        console.log("We should be best friends.");
+        document.getElementById("message").innerHTML = MESSAGE_GREAT
+    } else if (totalCompatibility >= 50) {
+        console.log("We should just be friends.");
+        document.getElementById("message").innerHTML = MESSAGE_GOOD
+    } else {
+        console.log("See ya.")
+        document.getElementById("message").innerHTML = MESSAGE_BAD
+    }
+}
+
+</script>
+</body>
+</html>
