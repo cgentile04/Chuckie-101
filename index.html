@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 	
-<head>
-	<meta charset="UTF-8">
-	<title>Chuckie 101</title>
-	<link rel="stylesheet" href="chuck.css">
-</head>
-<body>
-	<script>
-		function myFunction(element, clr) {
-		element.style.color = clr;
-		}
-	</script>
-	<h1 onclick="myFunction(this, 'royalblue')">
-		Chuckie 101
-	</h1>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport", content="width=device-width, initial-scale=1.0">
+		<title>Chuckie 101</title>
+		<link rel="stylesheet" href="chuck.css">
+		<link rel="stylesheet" href="doodlejump.css">
+		<script src="doodlejump.js"></script>
+	</head>
+	<body>
+		<script>
+			function myFunction(element, clr) {
+			element.style.color = clr;
+			}
+		</script>
+		<h1 onclick="myFunction(this, 'royalblue')">
+			Chuckie 101
+		</h1>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<div class="navbar">
-	<a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
-	<a href="aboutme.html"><i class="fa fa-fw fa-user"></i> About Me</a>
-	<a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-	</div>
-	
-</body>
+		<div class="navbar">
+		<a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+		<a href="aboutme.html"><i class="fa fa-fw fa-user"></i> About Me</a>
+		<a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+		</div>
+
+		<h2>Welcome to Doodle Jump!</h2>
+			<p>In this game, you will become immersed in the doodle world. This is from the perspective of a green doodler, who realized that there is more to life than being on a piece of paper. Playing as the doodler, you will be bouncing off of a series of green platforms that allow you to reach higher altitudes on the page. However, if you fall, you will continue falling on the page for eternity, so beware! Your score will appear in the upper lefthand corner and will only increase if you gain higher altitudes! Best of luck on your doodle adventures!</p>
+
+		<canvas id="board"></canvas>
+	</body>
 </html>
