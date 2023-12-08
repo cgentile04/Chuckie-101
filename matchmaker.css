@@ -22,7 +22,9 @@ p {
     margin-left: 9px
 }
 label {
-    color: red
+    color: red;
+    font-weight: bold;
+    font-size: 16pt
 }
 button {
     color: green;
